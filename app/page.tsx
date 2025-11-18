@@ -13,11 +13,6 @@ import PwaStatusCard from './components/PwaStatusCard';
 import { DrinkRecord, WeeklyData } from './types';
 import { supabase } from '../lib/supabaseClient';
 
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
-}
-
 declare global {
   interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent;
