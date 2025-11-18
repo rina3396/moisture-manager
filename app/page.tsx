@@ -18,6 +18,12 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
 }
 
+declare global {
+  interface WindowEventMap {
+    beforeinstallprompt: BeforeInstallPromptEvent;
+  }
+}
+
 const PROFILE_ID = 'default_profile';
 
 const formatRecordTime = (date: Date) =>
@@ -463,4 +469,3 @@ const WaterIntakeApp = () => {
 };
 
 export default WaterIntakeApp;
-
