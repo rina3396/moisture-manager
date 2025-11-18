@@ -13,12 +13,6 @@ import PwaStatusCard from './components/PwaStatusCard';
 import { DrinkRecord, WeeklyData } from './types';
 import { supabase } from '../lib/supabaseClient';
 
-declare global {
-  interface WindowEventMap {
-    beforeinstallprompt: BeforeInstallPromptEvent;
-  }
-}
-
 const PROFILE_ID = 'default_profile';
 
 const formatRecordTime = (date: Date) =>
